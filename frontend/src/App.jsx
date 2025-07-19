@@ -10,6 +10,7 @@ import {
   RiUserStarLine,
   RiUserSettingsLine,
 } from "react-icons/ri";
+import { BsFiletypePdf } from "react-icons/bs";
 import { motion } from "framer-motion";
 
 const difficultyMap = {
@@ -153,7 +154,7 @@ export default function App() {
               <h2 className="text-xl font-semibold text-purple-700 mb-3">
                 Explanation
               </h2>
-              <p className="text-gray-800 whitespace-pre-wrap break-words">
+              <p className="text-gray-800 text-justify whitespace-pre-wrap break-words">
                 {output}
               </p>
             </div>
@@ -184,6 +185,15 @@ export default function App() {
                 className="bg-blue-200 hover:bg-blue-300 px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer"
               >
                 <RiRefreshLine size={16} /> Regenerate
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={downloadPDF}
+                className="bg-red-200 hover:bg-red-300 px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer"
+              >
+                <BsFiletypePdf size={16} /> Download Pdf
               </motion.button>
             </div>
           </>
