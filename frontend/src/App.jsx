@@ -29,10 +29,13 @@ export default function App() {
     if (!topic) return;
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/explain", {
-        topic,
-        level: difficulty,
-      });
+      const res = await axios.post(
+        "https://explain-like-im-5-ky8m.onrender.com/api/explain",
+        {
+          topic,
+          level: difficulty,
+        }
+      );
       setOutput(res.data.explanation);
     } catch {
       setOutput("⚠️ Something went wrong.");
